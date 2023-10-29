@@ -50,7 +50,7 @@ router.patch('/:id', async (req, res) => {
 }
 );
 
-//endpoint that deactivates product by id
+
 
 router.patch('/:id', async (req, res) => {
     const { id } = req.params;

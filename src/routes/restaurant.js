@@ -53,6 +53,7 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     deleteRestaurant = await Restaurant.findById({ _id: id });
+    deleteRestaurant.active = false;
     res.json(deleteRestaurant);
 }
 );
