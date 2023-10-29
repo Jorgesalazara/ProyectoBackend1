@@ -10,4 +10,8 @@ const ProductSchema = new Schema({
     active: {type: Boolean, required: true},
 });
 
+const Product = createConnection().model('Product', ProductSchema)
+
+export default  Product;
+
 

@@ -18,12 +18,23 @@ router.post("/register",async (req, res) => {
 }
 );
 
+
+
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const findRestaurant = await Restaurant.findOne({ _id: id});
     res.json(findRestaurant);
 }
 );
+
+//endpoint to read data of a restaurant by category or the names
+router.get('/', async (req, res) => {        
+    const { category, name } = req.query;
+    const findRestaurant = await Restaurant.find({ category: category, name: name});
+    res.json(findRestaurant);
+}
+);
+
 
 router.patch('/:id', async (req, res) => {
     const { id } = req.params;
